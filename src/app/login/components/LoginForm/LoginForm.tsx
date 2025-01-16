@@ -67,7 +67,7 @@ export const LoginForm = () => {
                     {...field}
                     value={field.value}
                     onChange={(e) => field.onChange(f_input(e))}
-                    className="h-10 bg-background"
+                    className="h-10 bg-background placeholder:!text-sm"
                     required
                     type="email"
                     placeholder="mail@example.com"

@@ -41,9 +41,9 @@ export default function LoginPage() {
           </div>
 
           <div className="flex flex-col py-8 text-center">
-            <h3 className="text-xl font-extrabold text-foreground">
+            <p className="text-xl font-semibold text-foreground">
               Olá, {getGreeting()}👋
-            </h3>
+            </p>
             <span className="text-sm text-muted-foreground">
               Acesse sua conta para continuar
             </span>
