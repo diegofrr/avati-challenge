@@ -27,11 +27,13 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useCurrentUserStore } from '@/store/CurrentUserStore';
 
 export const LoginForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const { mutateAsync: login, isPending } = useLogin();
+  const { setCurrentUser } = useCurrentUserStore();
 
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
@@ -43,9 +45,11 @@ export const LoginForm = () => {
     const data = form.getValues();
 
     const response = await login(data);
-    if (response) router.replace('/');
 
-    console.log(data);
+    if (response?.user) {
+      setCurrentUser(response.user);
+      router.replace('/');
+    }
   };
 
   return (

@@ -1,19 +1,25 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { LoginForm } from './components/LoginForm/LoginForm';
 import { Card, CardContent } from '@/components/ui/card';
-import { useTheme } from '@/hooks';
+import { useMediaQuery, useTheme } from '@/hooks';
 import { getGreeting } from '@/utils/shared';
 import { LoginBackground } from './components/LoginBackground';
 import { LoginBanner } from './components/LoginBanner';
+import { cn } from '@/lib/utils';
 
 export default function LoginPage() {
   const { toggleTheme, ThemeIcon } = useTheme();
+  const isSmallHeight = useMediaQuery('(max-height: 600px)');
 
   return (
-    <div className="relative flex h-screen max-h-screen items-center justify-between gap-16 overflow-hidden p-8">
+    <div
+      className={cn(
+        'relative flex h-screen items-center justify-between gap-16 overflow-hidden p-8',
+        isSmallHeight && 'min-h-[600px]',
+      )}
+    >
       <div className="w-full pb-16">
         <div className="mx-auto flex w-full max-w-md flex-col gap-8">
           <div className="flex w-full items-center justify-between gap-4 rounded-full">
@@ -43,8 +49,6 @@ export default function LoginPage() {
             </span>
           </div>
 
-          {/* <Separator className="mx-auto max-w-16" /> */}
-
           <Card className="w-full border-none bg-transparent shadow-none">
             <CardContent className="p-0">
               <LoginForm />
@@ -55,7 +59,7 @@ export default function LoginPage() {
 
       <LoginBanner />
 
-      <LoginBackground />
+      {!isSmallHeight && <LoginBackground />}
     </div>
   );
 }
