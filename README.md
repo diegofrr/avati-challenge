@@ -67,8 +67,8 @@ As credenciais de acesso estão disponíveis no arquivo `DemoDatabase.ts` e pode
 Segue e-mails e senhas:
 
 ```
-pedro@mail.com
-pedro123
+joao@mail.com
+joao123
 
 maria@mail.com
 maria123
