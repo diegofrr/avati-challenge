@@ -17,14 +17,16 @@ export const useLogin = (): UseMutationResult<
         const result = await loginAction(input);
 
         if (result.error) throw new HttpError(result.error, result.status);
+
         return result.data;
       } catch (err) {
         const error = err as HttpError;
 
         toast.error(AUTH_ERROR_MESSAGES[error.statusCode || 500], {
-          position: 'bottom-center',
+          position: 'top-left',
           duration: 5000,
           closeButton: true,
+          style: { boxShadow: 'none' },
         });
 
         console.error(error);
