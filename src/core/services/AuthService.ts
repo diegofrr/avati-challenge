@@ -22,19 +22,19 @@ export class AuthService implements IAuthService {
       };
     }
 
-    if (!user.isActive) {
-      return {
-        data: null,
-        status: 403,
-        error: AUTH_ERROR_MESSAGES[403],
-      };
-    }
-
     if (user.password !== input.password) {
       return {
         data: null,
         status: 401,
         error: AUTH_ERROR_MESSAGES[401],
+      };
+    }
+
+    if (!user.isActive) {
+      return {
+        data: null,
+        status: 403,
+        error: AUTH_ERROR_MESSAGES[403],
       };
     }
 
