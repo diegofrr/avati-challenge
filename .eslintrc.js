@@ -20,8 +20,9 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
   ],
-  plugins: ['prettier', '@typescript-eslint', 'react'],
+  plugins: ['prettier', '@typescript-eslint', 'react',],
   rules: {
     'prefer-const': 'warn',
     'no-var': 'warn',
@@ -48,6 +49,8 @@ module.exports = {
         extensions: ['ts', 'tsx'],
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'prettier/prettier': 'warn',
@@ -58,4 +61,3 @@ module.exports = {
     },
   },
 };
-
