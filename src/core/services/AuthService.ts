@@ -1,7 +1,7 @@
 import { delay } from '@/utils/shared';
 import { IAuthService, LoginProps } from '../interfaces/IAuthService';
 import { cookies } from 'next/headers';
-import { mockUserSession } from '@/mocks/mockSession';
+import { mockCredentials } from '@/mocks/mockCredentials';
 import { DemoDatabase } from '../constants/DemoDatabase';
 import { SESSION_KEY } from '@/constants/cookieKeys';
 import { AUTH_ERROR_MESSAGES } from '../constants/AuthErrorMessages';
@@ -38,10 +38,13 @@ export class AuthService implements IAuthService {
       };
     }
 
-    (await cookies()).set(SESSION_KEY, JSON.stringify(mockUserSession));
+    (await cookies()).set(SESSION_KEY, JSON.stringify(user));
 
     return {
-      data: mockUserSession,
+      data: {
+        user,
+        ...mockCredentials,
+      },
       status: 200,
     };
   }

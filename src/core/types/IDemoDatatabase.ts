@@ -6,12 +6,5 @@ export type IDemoDatabase = {
 
 export type DemoDatatabaseUser = User & {
   password: string;
-  role: DemoDatatabaseUserRole;
   isActive: boolean;
 };
-
-export enum DemoDatatabaseUserRole {
-  ADMIN = 'admin',
-  USER = 'user',
-  GUEST = 'guest',
-}
