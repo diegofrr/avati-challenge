@@ -23,9 +23,8 @@ export const useLogin = (): UseMutationResult<
         const error = err as HttpError;
 
         toast.error(AUTH_ERROR_MESSAGES[error.statusCode || 500], {
-          position: 'top-left',
+          position: 'bottom-left',
           duration: 5000,
-          closeButton: true,
           style: { boxShadow: 'none' },
         });
 

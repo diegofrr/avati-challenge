@@ -15,7 +15,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         enableSystem
         disableTransitionOnChange
       >
-        <Toaster duration={2000} richColors />
+        <Toaster duration={2000} />
         {children}
       </NextThemesProvider>
     </QueryClientProvider>

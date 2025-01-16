@@ -44,7 +44,10 @@ export const LoginForm = () => {
   const handleSubmit = async () => {
     const data = form.getValues();
 
-    const response = await login(data);
+    const response = await login({
+      email: data.email.toLowerCase(),
+      password: data.password,
+    });
 
     if (response?.user) {
       setCurrentUser(response.user);
