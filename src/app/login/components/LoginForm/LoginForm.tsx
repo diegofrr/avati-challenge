@@ -22,7 +22,6 @@ import {
   EyeIcon,
   EyeOffIcon,
   Loader2Icon,
-  LoaderIcon,
   LogInIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
