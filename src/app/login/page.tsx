@@ -42,7 +42,7 @@ export default function LoginPage() {
 
           <div className="flex flex-col py-8 text-center">
             <p className="text-xl font-semibold text-foreground">
-              Olá, {getGreeting()}👋
+              {getGreeting({ withEmoji: true, concact: '!' })}
             </p>
             <span className="text-sm text-muted-foreground">
               Acesse sua conta para continuar
