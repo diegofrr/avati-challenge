@@ -9,20 +9,21 @@
 - [Iniciando](#🚀-iniciando)
   - [Pré-requisitos](#pré-requisitos)
   - [Instalação](#instalação)
-  - [Running the Application](#running-the-application)
-
+  - [Rodando a aplicação](#rodando-a-aplicação)
+- [Credenciais](#🔐-credenciais)
+    
 ## 📝 Sobre o projeto
 
 Este projeto consiste em uma tela de login funcional desenvolvida para como parte do processo seletivo da **Avati** para a vaga de **Estágio em Programação Frontend**.
 
 ## 💻 Tecnologias
 
-- **Next.js** - Framework React para renderização no lado do servidor e geração de sites estáticos.
-- **Shadcn/ui** - Biblioteca de componentes pré-configurada baseada em Radix UI e Tailwind CSS.
-- **Tailwind CSS** - Framework CSS de utilitário primeiro para estilização.
-- **Zustand** - Biblioteca de gerenciamento de estado leve.
-- **React Query** - Biblioteca de busca de dados para React.
-
+- **Next.js**: Framework React para renderização no servidor e sites estáticos; 
+- **Shadcn/ui**: Componentes prontos baseados em Radix UI e Tailwind CSS; 
+- **Tailwind CSS**: Framework CSS utilitário para estilização rápida e eficiente; 
+- **Zustand**: Biblioteca leve para gerenciamento de estado no React; 
+- **React Query**: Biblioteca para busca e cache de dados no React.
+  
 ## 🚀 Iniciando
 
 ### Pré-requisitos
