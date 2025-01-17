@@ -128,7 +128,7 @@ export const LoginForm = () => {
             type="submit"
           >
             {isLoggingIn && <Loader2Icon className="animate-spin" size={16} />}
-            {isLoggingIn ? 'Entrando...' : 'Entrar'}
+            {isLoggingIn ? 'Aguarde...' : 'Entrar'}
             {!isLoggingIn && <LogInIcon size={16} />}
           </Button>
 
