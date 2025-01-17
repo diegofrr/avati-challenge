@@ -31,7 +31,7 @@ import { useCurrentUserStore } from '@/store/CurrentUserStore';
 export const LoginForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const { mutateAsync: login, isPending } = useLogin();
+  const { mutateAsync: login, isPending: isLoggingIn } = useLogin();
   const { setCurrentUser } = useCurrentUserStore();
 
   const form = useForm<LoginSchema>({
@@ -121,24 +121,28 @@ export const LoginForm = () => {
           }}
         />
 
-        <div className="flex items-center gap-4">
-          <Button className="w-full rounded-full" size="lg" type="submit">
-            {isPending && <Loader2Icon className="animate-spin" size={16} />}
-            {isPending ? 'Acessando...' : 'Acessar'}
-            {!isPending && <LogInIcon size={16} />}
+        <div className="flex flex-col items-center gap-4">
+          <Button
+            className="w-full rounded-full px-4 font-medium"
+            size="lg"
+            type="submit"
+          >
+            {isLoggingIn && <Loader2Icon className="animate-spin" size={16} />}
+            {isLoggingIn ? 'Entrando...' : 'Entrar'}
+            {!isLoggingIn && <LogInIcon size={16} />}
           </Button>
-        </div>
 
-        <Link
-          href="#"
-          className={cn(
-            buttonVariants({ variant: 'link' }),
-            'w-full px-0 text-center text-xs text-muted-foreground hover:text-foreground',
-          )}
-        >
-          Esqueci minha senha
-          <ArrowRightIcon size={14} />
-        </Link>
+          <Link
+            href="#"
+            className={cn(
+              buttonVariants({ variant: 'link' }),
+              'mx-auto px-0 text-center text-sm font-normal text-muted-foreground hover:text-foreground',
+            )}
+          >
+            Esqueci minha senha
+            <ArrowRightIcon className="!h-3.5 !w-3.5" />
+          </Link>
+        </div>
       </form>
     </Form>
   );

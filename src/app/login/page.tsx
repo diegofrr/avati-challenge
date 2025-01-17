@@ -24,10 +24,7 @@ export default function LoginPage() {
         <div className="mx-auto flex w-full max-w-md flex-col gap-8">
           <div className="flex w-full items-center justify-between gap-4 rounded-full">
             <Button className="group rounded-full" variant="outline">
-              <span className="group-hover:animate-[pulse_1s_ease_infinite]">
-                ✨
-              </span>
-              Criar conta
+              ✨ Criar conta
             </Button>
 
             <Button

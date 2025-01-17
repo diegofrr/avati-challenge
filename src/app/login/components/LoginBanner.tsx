@@ -10,8 +10,10 @@ export const LoginBanner = () => {
         height={64}
       />
 
-      <h1 className="z-10 w-full max-w-md text-[52px] font-extrabold leading-tight text-black">
-        Consultoria em Gestão da Inovação
+      <h1 className="z-10 w-full text-[54px] font-extrabold leading-tight text-black xl:text-[64px]">
+        Consultoria <br />
+        em Gestão da <br />
+        Inovação
       </h1>
 
       <span className="mt-auto text-sm font-semibold text-black">
